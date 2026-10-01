@@ -1,0 +1,33 @@
+name: build profile visuals
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/generate_vedant_gif.py"
+      - ".github/workflows/profile-visuals.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  visuals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install pillow numpy opencv-python-headless
+
+      - run: python scripts/generate_vedant_gif.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: refresh animated profile visual"
+          file_pattern: "assets/vedant.gif"
