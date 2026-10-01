@@ -1,11 +1,11 @@
 <!--
   VEDANT SHARMA
-  A living pixel profile.
+  An animated doodle / motion-graphics profile.
 -->
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/profile.gif?v=1" width="100%" alt="Animated pixel-art workspace where Vedant walks in, sits at a laptop, builds, and waves"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/profile.gif?v=2" width="100%" alt="Animated hand-drawn pixel doodle profile with moving stickers, charts, windows, character, and motion graphics"/>
 
 <br/>
 
@@ -30,9 +30,9 @@
 <div align="center">
 
 <sub>
-the profile is the interface.
+a little motion-graphics playground.
 <br/>
-the character walks in. the desk wakes up. the work happens.
+stickers move · windows slide · charts draw · the character works · everything loops.
 </sub>
 
 </div>
