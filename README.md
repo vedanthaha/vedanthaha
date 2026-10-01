@@ -1,15 +1,13 @@
 <!--
   VEDANT SHARMA
-  An animated doodle / motion-graphics profile.
+  A full-page animated doodle profile.
 -->
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/profile.gif?v=2" width="100%" alt="Animated hand-drawn pixel doodle profile with moving stickers, charts, windows, character, and motion graphics"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/profile.gif?v=3" width="100%" alt="Full-page hand-drawn doodle animation of a stickman roaming through Vedant's GitHub profile, interacting with projects, stats, tools and a laptop"/>
 
 <br/>
-
-### VEDANT SHARMA
 
 **developer · designer · builder**
 
@@ -30,9 +28,9 @@
 <div align="center">
 
 <sub>
-a little motion-graphics playground.
+the little guy doesn't live in a banner.
 <br/>
-stickers move · windows slide · charts draw · the character works · everything loops.
+he roams the whole page.
 </sub>
 
 </div>
