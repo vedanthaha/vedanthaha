@@ -131,15 +131,6 @@ A desktop music experience exploring synced lyrics, lightweight desktop UI, and 
 ## 📊 github telemetry
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" height="165" alt="GitHub stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&hide_border=true&langs_count=8&count_private=true" height="165" alt="Top languages"/>
-<br/><br/>
-<img src="https://streak-stats.demolab.com?user=vedanthaha&hide_border=true" alt="GitHub streak"/>
-</div>
-
-### contribution activity
-
-<div align="center">
 
 <img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" height="165" alt="GitHub stats"/>
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&hide_border=true&langs_count=8&count_private=true" height="165" alt="Top languages"/>
