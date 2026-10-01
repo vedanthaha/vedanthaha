@@ -58,11 +58,11 @@ Sometimes it means redesigning the interface until the product finally feels rig
 
 <td width="44%" align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="coding animation"/>
+<img src="https://user-images.githubusercontent.com/74038190/213866269-5d00981c-7c98-46d7-8a8e-16f462f15227.gif" width="100%" alt="coding animation"/>
 
 <br/><br/>
 
-<img src="https://media.giphy.com/media/Ws6T5PN7wHv3cY8xy8/giphy.gif" width="100%" alt="creative coding animation"/>
+<img src="https://user-images.githubusercontent.com/74038190/213910842-5a320d6b-e48f-4d41-a901-0e6a357e8dae.gif" width="100%" alt="creative coding animation"/>
 
 </td>
 </tr>
@@ -248,7 +248,7 @@ interests:
 
 <div align="center">
 
-<img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="280" alt="thanks"/>
+<img src="https://user-images.githubusercontent.com/74038190/212746035-d5c61762-973c-44c0-aec7-887f3b7690e3.gif" width="280" alt="thanks"/>
 
 ### thanks for scrolling this far.
 
