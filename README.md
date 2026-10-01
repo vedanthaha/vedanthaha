@@ -1,52 +1,68 @@
 <!-- PROFILE README · vedanthaha -->
 
 <div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=600&size=28&pause=900&color=F5F5F5&center=true&vCenter=true&width=800&lines=Vedant+Sharma;Developer+%E2%80%A2+Designer+%E2%80%A2+Builder;I+like+turning+ideas+into+things+people+can+use." alt="Typing intro" />
-<br/>
-<a href="https://github.com/vedanthaha"><img src="https://img.shields.io/github/followers/vedanthaha?label=followers&style=flat-square&logo=github" alt="followers"/></a>
-<a href="https://github.com/vedanthaha?tab=repositories"><img src="https://img.shields.io/github/stars/vedanthaha?affiliations=OWNER%2CCOLLABORATOR&style=flat-square&label=stars" alt="stars"/></a>
-<a href="https://github.com/vedanthaha/vedanthaha"><img src="https://komarev.com/ghpvc/?username=vedanthaha&style=flat-square&label=profile+views" alt="views"/></a>
-</div>
+
+# ⚡ VEDANT SHARMA
+
+### Developer • Designer • Builder • Creative Technologist
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2400&pause=900&color=00F7A5&center=true&vCenter=true&width=760&lines=I+build+things+that+feel+good+to+use.;Software+%2B+Design+%2B+AI+%2B+Automation.;Hackathons+are+my+playground.;Turning+weird+ideas+into+real+products." alt="Typing intro"/>
 
 <br/>
 
-## // whoami
+<a href="https://github.com/vedanthaha"><img src="https://img.shields.io/github/followers/vedanthaha?label=followers&style=for-the-badge&logo=github&logoColor=white&color=111111" /></a>
+<a href="https://github.com/vedanthaha?tab=repositories"><img src="https://img.shields.io/github/stars/vedanthaha?affiliations=OWNER%2CCOLLABORATOR&label=stars&style=for-the-badge&logo=github&logoColor=white&color=111111" /></a>
+<a href="https://github.com/vedanthaha"><img src="https://komarev.com/ghpvc/?username=vedanthaha&style=for-the-badge&label=PROFILE+VIEWS&color=111111" /></a>
 
-I'm **Vedant** — a BCA student, developer, designer, and builder from India.
-
-I work somewhere between **software engineering, product design, AI, automation, and creative technology**. I like taking rough ideas, figuring out the actual problem, and turning them into interfaces and systems that feel intentional.
-
-<div align="center">
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="coding animation" width="520"/>
 </div>
-
-Currently exploring:
-- useful AI products instead of AI-for-the-sake-of-AI demos
-- automation, agents, and developer tooling
-- product/UI systems with strong visual direction
-- motion, interaction design, and creative coding
-- shipping small experiments and seeing what sticks
 
 ---
 
-## 🏆 things i'm proud of
+## 🧠 whoami
 
 <table>
 <tr>
-<td width="50%">
+<td width="56%" valign="top">
 
-### 🥇 IBM National-Level Hackathon
-**Winner**
+```ts
+const vedant = {
+  name: "Vedant Sharma",
+  location: "India 🇮🇳",
 
-Built, shipped, presented, and competed at a national-level hackathon.
+  roles: [
+    "Developer",
+    "UI/UX Designer",
+    "Builder",
+    "Creative Technologist"
+  ],
+
+  obsessedWith: [
+    "product design",
+    "AI + automation",
+    "creative coding",
+    "motion",
+    "shipping"
+  ],
+
+  philosophy:
+    "make it work → make it make sense → make it beautiful"
+};
+```
+
+I like working at the intersection of **engineering and design**.
+
+Sometimes that means building a system from scratch.
+Sometimes it means redesigning the interface until the product finally feels right.
 
 </td>
-<td width="50%">
 
-### 🥇 Google Lake City Hackathon
-**Winner · CiviFix**
+<td width="44%" align="center">
 
-Built and presented **CiviFix**, a civic issue reporting platform focused on real-world infrastructure problems.
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="coding animation"/>
+
+<br/><br/>
+
+<img src="https://media.giphy.com/media/Ws6T5PN7wHv3cY8xy8/giphy.gif" width="100%" alt="creative coding animation"/>
 
 </td>
 </tr>
@@ -54,138 +70,198 @@ Built and presented **CiviFix**, a civic issue reporting platform focused on rea
 
 ---
 
-## ⚡ what i do
-
-| | |
-|---|---|
-| **Software** | React · TypeScript · Next.js · Node.js · Python |
-| **Product** | UI/UX · design systems · interaction design · prototyping |
-| **AI** | LLM apps · RAG · agents · voice interfaces |
-| **Automation** | n8n · APIs · workflows · lead systems |
-| **Creative tech** | motion graphics · GSAP · Remotion · audio · experiments |
-
----
-
-## 🚀 selected work
-
-### **Blinky** — UI/UX & Product Design
-Desktop-first AI companion experience focused on interaction, product visuals, quick actions, motion direction, and the overall interface.
-
-**My role:** UI/UX · Product Design · Visual Direction
-
-> I designed the interface and product experience — I’m not claiming ownership of the entire Blinky product/codebase.
-
----
-
-### **CiviFix** — Civic Reporting Platform
-A platform for reporting potholes, broken streetlights, waterlogging, and other civic issues, with location-aware reporting, severity handling, escalation, and an admin experience.
-
-**My role:** Development · Product · Hackathon
-
-<code>React</code> <code>TypeScript</code> <code>Vite</code> <code>Tailwind</code> <code>Supabase</code> <code>Leaflet</code>
-
----
-
-### **drop** — Media Downloader
-A clean media-downloading project focused on making a traditionally messy workflow feel simple.
-
-**My role:** Development · Architecture · Product/UI
-
-<code>Next.js</code> <code>Supabase</code> <code>Go</code> <code>yt-dlp</code> <code>FFmpeg</code>
-
----
-
-### **Dailys / Tracker** — Personal Workspace
-A productivity/workspace experiment around tasks, notes, knowledge, focus, analytics, and customizable layouts.
-
-**My role:** Product · Development · UI systems
-
-<code>React</code> <code>TypeScript</code> <code>Supabase</code>
-
----
-
-### **PinterestPub** — Pinterest Experiment
-A small project exploring Pinterest publishing/API workflows and visual content tooling.
-
-**My role:** Development · Experimentation
-
----
-
-### **LYRIX** — Floating Lyrics
-A desktop music experience exploring synced lyrics, lightweight desktop UI, and creative interaction.
-
-**My role:** Product · Development · UI
-
-<code>Tauri</code> <code>Svelte</code>
-
----
-
-## 🧰 toolbox
+# 🏆 things i've done
 
 <div align="center">
+
+| 🏅 | Achievement |
+|:---:|---|
+| 🥇 | **IBM National-Level Hackathon — Winner** |
+| 🥇 | **Google Lake City Hackathon — Winner** · CiviFix |
+| 🎨 | **Blinky — UI/UX & Product Design** |
+| 🧪 | Built and shipped multiple software, AI, automation & creative-tech projects |
+
+</div>
+
+---
+
+# ⚡ what i do
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   SOFTWARE        →  React / TypeScript / Next.js / Python  │
+│   PRODUCT         →  UI/UX / Design Systems / Prototyping   │
+│   AI              →  LLMs / RAG / Agents / Voice           │
+│   AUTOMATION      →  n8n / APIs / Workflows                │
+│   CREATIVE TECH   →  GSAP / Remotion / Motion / Audio      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# 🚀 things i've worked on
+
+### 🤖 Blinky
+**UI/UX & Product Design**
+
+Desktop-first AI companion experience.
+
+I worked on the **interface, product experience, visual direction, landing page, interactions and motion language**.
+
+> Not claiming the entire Blinky codebase — my contribution is primarily design/product experience.
+
+---
+
+### 🏙️ CiviFix
+**Developer · Product · Hackathon Winner**
+
+A civic reporting platform for issues like potholes, broken streetlights and waterlogging, with maps, severity handling, escalation and admin intelligence.
+
+`React` `TypeScript` `Vite` `Tailwind` `Supabase` `Leaflet`
+
+---
+
+### 📥 drop
+**Developer · Architecture · Product/UI**
+
+A clean media-downloading experience designed around making a messy workflow feel ridiculously simple.
+
+`Next.js` `Supabase` `Go` `yt-dlp` `FFmpeg`
+
+---
+
+### 🗂️ Dailys / Tracker
+**Product · Development · UI Systems**
+
+A personal workspace experiment combining tasks, notes, knowledge, focus, analytics and customizable layouts.
+
+`React` `TypeScript` `Supabase`
+
+---
+
+### 🤖 CatchUp AI
+**Developer · AI / Automation**
+
+A Telegram-focused AI assistant exploring voice-note summaries, chat catch-up and searchable group context.
+
+---
+
+### 🎵 LYRIX
+**Product · Development · UI**
+
+A lightweight desktop music experiment around floating synced lyrics.
+
+`Tauri` `Svelte`
+
+---
+
+### 📌 PinterestHub
+**Developer · Experimentation**
+
+A visual-content / Pinterest tooling experiment around API workflows and extraction.
+
+---
+
+# 🧰 my toolbox
+
+<div align="center">
+
 <img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,nodejs,python,html,css,tailwind,vite,svelte,tauri,supabase,postgres,git,github,linux,docker,figma,vercel&perline=10" alt="Tech stack"/>
+
 </div>
 
 ---
 
-## 📊 github telemetry
+# 📊 github telemetry
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" height="165" alt="GitHub stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&hide_border=true&langs_count=8&count_private=true" height="165" alt="Top languages"/>
+<img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&theme=transparent&title_color=00F7A5&icon_color=00F7A5&text_color=AAAAAA" height="170" alt="GitHub stats"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&langs_count=8&hide_border=true&theme=transparent&title_color=00F7A5&text_color=AAAAAA" height="170" alt="Top languages"/>
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=vedanthaha&hide_border=true" alt="GitHub streak"/>
+<img src="https://streak-stats.demolab.com?user=vedanthaha&theme=dark&hide_border=true&background=00000000&ring=00F7A5&fire=00F7A5&currStreakLabel=00F7A5" alt="GitHub streak"/>
 
 <br/><br/>
 
-<a href="https://github.com/vedanthaha">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&theme=github-compact&hide_border=true&area=true" alt="Vedant's GitHub contribution activity graph" width="95%"/>
-</a>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&theme=github-compact&hide_border=true&area=true" width="96%" alt="Contribution activity graph"/>
 
 </div>
 
-## 🐍 contribution snake
+---
+
+# 🐍 contribution snake
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg" alt="Contribution snake"/>
+
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg" width="96%" alt="Contribution snake"/>
+
 </div>
 
 > Generated automatically by GitHub Actions.
 
 ---
 
-## 🧠 how i like to build
+# 🎯 currently into
 
-<div align="center">
-<strong>idea → problem → experience → system → polish → ship → break → fix → repeat</strong>
-</div>
+```yaml
+building:
+  - AI products
+  - automation systems
+  - developer tools
+  - weird little experiments
 
-I care about both sides of the thing:
+learning:
+  - better product architecture
+  - advanced UI systems
+  - motion + creative coding
+  - shipping faster
 
-**the engineering should work · the interface should make sense**
+interests:
+  - basketball
+  - music production
+  - gaming
+  - motion design
+  - typography
+  - late-night building
+```
 
 ---
 
-## 🎧 outside the code
-
-Basketball · music production · gaming · motion design · random experiments · late-night building
-
-I also like making things that are slightly unnecessary but **way too fun to use**.
-
----
+# 🧩 how i think
 
 <div align="center">
 
-### let's build something weird.
+**idea → problem → experience → system → polish → ship → break → fix → repeat**
 
 <br/>
 
-<a href="https://github.com/vedanthaha"><img src="https://img.shields.io/badge/GitHub-vedanthaha-111111?style=for-the-badge&logo=github" alt="GitHub"/></a>
+<sub>the engineering should work · the interface should make sense · the details should feel intentional</sub>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="280" alt="thanks"/>
+
+### thanks for scrolling this far.
+
+**let's build something weird.**
+
+<br/>
+
+<a href="https://github.com/vedanthaha">
+<img src="https://img.shields.io/badge/GitHub-vedanthaha-111111?style=for-the-badge&logo=github"/>
+</a>
 
 <br/><br/>
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:111111,100:050505" width="100%" alt="Footer"/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:050505,100:0a0a0a" width="100%" alt="Footer"/>
 
 </div>
