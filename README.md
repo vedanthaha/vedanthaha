@@ -1,16 +1,15 @@
-<!-- PROFILE README · vedanthaha -->
+<!--
+  VEDANT SHARMA
+  A living pixel profile.
+-->
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/pixel-hello.gif?v=4" width="100%" alt="Pixel Vedant walking to his desk, working and waving"/>
-
-</div>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/profile.gif?v=1" width="100%" alt="Animated pixel-art workspace where Vedant walks in, sits at a laptop, builds, and waves"/>
 
 <br/>
 
-<div align="center">
-
-# VEDANT SHARMA
+### VEDANT SHARMA
 
 **developer · designer · builder**
 
@@ -18,15 +17,11 @@
 
 <br/><br/>
 
-<a href="https://github.com/vedanthaha">
-<img src="https://img.shields.io/github/followers/vedanthaha?style=flat-square&label=followers&color=161616" />
-</a>
-<a href="https://github.com/vedanthaha?tab=repositories">
-<img src="https://img.shields.io/github/stars/vedanthaha?affiliations=OWNER%2CCOLLABORATOR&style=flat-square&label=stars&color=161616" />
-</a>
-<a href="https://github.com/vedanthaha">
-<img src="https://komarev.com/ghpvc/?username=vedanthaha&style=flat-square&label=views&color=161616" />
-</a>
+<a href="https://github.com/vedanthaha">github</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://github.com/vedanthaha?tab=repositories">projects</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://github.com/vedanthaha?tab=activity">activity</a>
 
 </div>
 
@@ -34,262 +29,10 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/project-software.gif?v=4" width="100%" alt="Animated projects and software visualization"/>
-
-</div>
-
----
-
-## about
-
-<table>
-<tr>
-<td width="62%" valign="top">
-
-I’m **Vedant Sharma** — I build software, design interfaces, and obsess over the details between the two.
-
-I like taking an idea all the way through:
-
-**idea → interface → system → interaction → polish → ship**
-
-I’m usually somewhere between a product engineer and a visual designer: writing the code, shaping the interaction, making the motion feel right, then trimming whatever doesn’t need to be there.
-
-Right now I’m exploring AI products, automation, developer tools, experimental interfaces, motion and creative coding.
-
-</td>
-
-<td width="38%" valign="top">
-
-**ROLE**  
-Developer · Designer · Builder
-
-**FOCUS**  
-Product · Systems · AI · Automation
-
-**INTERESTS**  
-Motion · Creative coding · Music · Typography
-
-**CURRENT MODE**  
-Build → test → simplify → ship
-
-</td>
-</tr>
-</table>
-
----
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/projects.svg?v=1" width="100%" alt="Selected projects"/>
-
-</div>
-
----
-
-## selected work
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### BLINKY
-
-**UI/UX · Product Design · Motion**
-
-Desktop-first AI companion experience.
-
-My contribution: interface, product experience, visual direction, landing page, interactions and motion language.
-
-</td>
-
-<td width="50%" valign="top">
-
-### CIVIFIX
-
-**Product · Engineering · Hackathon**
-
-Civic reporting for potholes, broken streetlights and waterlogging, with maps, severity handling, escalation and admin intelligence.
-
-\`React\` \`TypeScript\` \`Supabase\` \`Leaflet\`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### DROP
-
-**Product · Architecture · UI**
-
-A deliberately simple media-downloading workflow.
-
-\`Next.js\` \`Supabase\` \`Go\` \`yt-dlp\` \`FFmpeg\`
-
-</td>
-
-<td width="50%" valign="top">
-
-### DAILYS
-
-**Product · Development · UI Systems**
-
-A personal workspace experiment around tasks, notes, knowledge, focus, analytics and customizable layouts.
-
-\`React\` \`TypeScript\` \`Supabase\`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### CATCHUP AI
-
-**AI · Automation**
-
-Telegram assistant exploring voice-note summaries, chat catch-up and searchable group context.
-
-</td>
-
-<td width="50%" valign="top">
-
-### LYRIX
-
-**Desktop · Creative Tech**
-
-Floating synced lyrics as a lightweight desktop music experiment.
-
-\`Tauri\` \`Svelte\`
-
-</td>
-</tr>
-</table>
-
----
-
-## capabilities
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,nodejs,python,html,css,tailwind,vite,svelte,tauri,supabase,postgres,git,github,linux,docker,figma,vercel&perline=10" width="90%" alt="Technology stack"/>
-
-</div>
-
+<sub>
+the profile is the interface.
 <br/>
-
-<div align="center">
-
-| SOFTWARE | PRODUCT | AI | AUTOMATION | CREATIVE |
-|:---:|:---:|:---:|:---:|:---:|
-| React · Next.js | UI/UX · Systems | LLMs · RAG | n8n · APIs | GSAP · Remotion |
-| TypeScript · Python | Prototyping | Agents · Voice | Webhooks | Motion · Audio |
-
-</div>
-
----
-
-## proof of work
-
-<div align="center">
-
-**IBM NATIONAL-LEVEL HACKATHON — WINNER**
-
-&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
-
-**GOOGLE LAKE CITY HACKATHON — WINNER**
-
-<br/>
-
-<sub>CiviFix · product · engineering · presentation</sub>
-
-</div>
-
----
-
-# github / live telemetry
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&theme=transparent&title_color=F5F5F3&icon_color=F5F5F3&text_color=8A8A8A&bg_color=00000000" height="175" alt="GitHub statistics"/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&langs_count=8&hide_border=true&theme=transparent&title_color=F5F5F3&text_color=8A8A8A&bg_color=00000000" height="175" alt="Top languages"/>
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=vedanthaha&theme=dark&hide_border=true&background=00000000&ring=F5F5F3&fire=F5F5F3&currStreakLabel=F5F5F3&sideLabels=8A8A8A&currStreakNum=F5F5F3&sideNums=F5F5F3" width="70%" alt="GitHub streak"/>
-
-<br/><br/>
-
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vedanthaha&theme=github_dark" width="96%" alt="GitHub profile activity"/>
-
-<br/><br/>
-
-<img src="https://ghchart.rshah.org/F5F5F3/vedanthaha" width="96%" alt="Contribution activity"/>
-
-<br/><br/>
-
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg?v=1ce748e" width="96%" alt="Contribution snake"/>
-
-</div>
-
----
-
-## currently
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-**BUILDING**
-
-AI products  
-automation systems  
-developer tools  
-experimental interfaces
-
-</td>
-
-<td width="33%" valign="top">
-
-**LEARNING**
-
-product architecture  
-advanced UI systems  
-motion + creative coding  
-shipping faster
-
-</td>
-
-<td width="33%" valign="top">
-
-**OUTSIDE**
-
-basketball  
-music production  
-gaming  
-typography
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/pixel-hello.gif?v=2" width="100%" alt="Walking pixel character saying hello"/>
-
-</div>
-
----
-
-<div align="center">
-
-### idea → experience → system → polish → ship
-
-<br/>
-
-<sub>github.com/vedanthaha</sub>
+the character walks in. the desk wakes up. the work happens.
+</sub>
 
 </div>
