@@ -1,17 +1,17 @@
-name: build pixel profile
+name: build profile dashboard
 
 on:
   push:
     branches: [main]
     paths-ignore:
-      - "assets/profile.gif"
+      - "assets/dashboard.gif"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  pixel-profile:
+  dashboard:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,9 +22,9 @@ jobs:
 
       - run: pip install pillow
 
-      - run: python scripts/generate_pixel_profile.py
+      - run: python scripts/generate_dashboard.py
 
       - uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "chore: refresh pixel profile animation"
-          file_pattern: "assets/profile.gif"
+          commit_message: "chore: refresh profile dashboard"
+          file_pattern: "assets/dashboard.gif"
