@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths-ignore:
       - "assets/vedant.gif"
+      - "assets/project-software.gif"
+      - "assets/pixel-hello.gif"
   workflow_dispatch:
   schedule:
     - cron: "17 3 * * *"
@@ -25,8 +27,9 @@ jobs:
       - run: pip install pillow numpy opencv-python-headless
 
       - run: python scripts/generate_vedant_gif.py
+      - run: python scripts/generate_profile_visuals.py
 
       - uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "chore: refresh animated profile visual"
-          file_pattern: "assets/vedant.gif"
+          commit_message: "chore: refresh animated profile visuals"
+          file_pattern: "assets/*.gif"
