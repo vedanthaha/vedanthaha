@@ -188,7 +188,7 @@ A visual-content / Pinterest tooling experiment around API workflows and extract
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&theme=github-compact&hide_border=true&area=true" width="96%" alt="Contribution activity graph"/>
+<a href="https://github.com/vedanthaha"><img src="https://ghchart.rshah.org/00F7A5/vedanthaha" width="96%" alt="GitHub contribution activity graph"/></a>
 
 </div>
 
