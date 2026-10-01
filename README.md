@@ -141,7 +141,9 @@ A desktop music experience exploring synced lyrics, lightweight desktop UI, and 
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&hide_border=true&area=true" alt="Contribution activity graph" width="95%"/>
+<a href="https://github.com/vedanthaha">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&theme=github-compact&hide_border=true&area=true" alt="Vedant's GitHub contribution activity graph" width="95%"/>
+</a>
 
 </div>
 
