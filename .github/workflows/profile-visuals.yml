@@ -1,21 +1,17 @@
-name: build profile visuals
+name: build pixel profile
 
 on:
   push:
     branches: [main]
     paths-ignore:
-      - "assets/vedant.gif"
-      - "assets/project-software.gif"
-      - "assets/pixel-hello.gif"
+      - "assets/profile.gif"
   workflow_dispatch:
-  schedule:
-    - cron: "17 3 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  visuals:
+  pixel-profile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,11 +20,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install pillow numpy opencv-python-headless
+      - run: pip install pillow
 
-      - run: python scripts/generate_profile_visuals.py
+      - run: python scripts/generate_pixel_profile.py
 
       - uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "chore: refresh animated profile visuals"
-          file_pattern: "assets/*.gif"
+          commit_message: "chore: refresh pixel profile animation"
+          file_pattern: "assets/profile.gif"
