@@ -1,17 +1,12 @@
-<!--
-  VEDANT SHARMA
-  A full-page animated doodle profile.
--->
+# VEDANT SHARMA
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/profile.gif?v=3" width="100%" alt="Full-page hand-drawn doodle animation of a stickman roaming through Vedant's GitHub profile, interacting with projects, stats, tools and a laptop"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/dashboard.gif?v=1" width="100%" alt="Animated dark command-center dashboard for Vedant Sharma"/>
 
 <br/>
 
-**developer · designer · builder**
-
-<sub>software · product · AI · automation · creative technology</sub>
+<sub>developer · designer · builder</sub>
 
 <br/><br/>
 
@@ -28,9 +23,9 @@
 <div align="center">
 
 <sub>
-the little guy doesn't live in a banner.
+software · product · AI · automation · creative technology
 <br/>
-he roams the whole page.
+building things, breaking things, shipping things.
 </sub>
 
 </div>
