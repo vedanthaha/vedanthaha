@@ -17,7 +17,7 @@ I'm **Vedant** — a BCA student, developer, designer, and builder from India.
 I work somewhere between **software engineering, product design, AI, automation, and creative technology**. I like taking rough ideas, figuring out the actual problem, and turning them into interfaces and systems that feel intentional.
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/build.gif" alt="building" width="520"/>
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="coding animation" width="520"/>
 </div>
 
 Currently exploring:
@@ -139,11 +139,11 @@ A desktop music experience exploring synced lyrics, lightweight desktop UI, and 
 
 <img src="https://streak-stats.demolab.com?user=vedanthaha&hide_border=true" alt="GitHub streak"/>
 
+<br/><br/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&hide_border=true&area=true" alt="Contribution activity graph" width="95%"/>
+
 </div>
-
-> Live cards are generated from my GitHub activity.
-
----
 
 ## 🐍 contribution snake
 
