@@ -1,258 +1,120 @@
 <!-- PROFILE README · vedanthaha -->
 
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/hero.svg?v=3fb9ee1" width="100%" alt="Vedant Sharma — Developer, Designer, Builder"/>
-
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/hero.svg?v=4" width="100%" alt="Vedant Sharma"/>
 </div>
 
 <br/>
 
 <div align="center">
 
-**I build software where engineering, product and visual design meet.**
+### I build software where engineering meets product and visual design.
 
-<br/>
-
-<sub>web systems · AI · automation · UI/UX · creative technology · motion</sub>
+<sub>AI · automation · web systems · UI/UX · motion · creative technology</sub>
 
 </div>
 
 ---
 
-## 01 / ABOUT
+### About
 
-<table>
-<tr>
-<td width="58%" valign="top">
+I'm **Vedant Sharma**, a developer and product-minded designer from India.
 
-I am **Vedant Sharma**, a developer and product-minded designer from India.
+I enjoy taking things from **rough idea → interface → working system → polished product**.
 
-I like taking an idea from **rough concept → interface → working system → polished product**.
-
-My work usually sits somewhere between software engineering and visual design: building the system, shaping the experience, and caring about the small details that make something feel finished.
-
-<br/>
-
-**Current direction**
-
-Building AI products, automation systems, developer tools and experimental interfaces.
-
-</td>
-
-<td width="42%" valign="top">
+My work sits between engineering and design: building the underlying system, shaping the experience, and obsessing over the details that make a product feel intentional.
 
 ```txt
-ROLE
-developer / designer
+developer / designer / builder
 
-FOCUS
-product + systems
-
-INTERESTS
-AI
-automation
-motion
-creative coding
-music
-
-PRINCIPLE
-make it work
-make it make sense
-make it feel right
+currently:
+AI products
+automation systems
+developer tools
+experimental interfaces
 ```
 
-</td>
-</tr>
-</table>
-
 ---
 
-<div align="center">
+### Selected work
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/work.svg?v=f2a6047" width="100%" alt="Selected work — Blinky, CiviFix, drop, Dailys"/>
+**BLINKY**  
+UI/UX · Product Design · Motion  
+Desktop-first AI companion experience. I worked on the interface, product experience, visual direction, landing page, interactions and motion language.
 
-</div>
+**CIVIFIX**  
+Product · Engineering · Hackathon  
+Civic issue reporting with maps, severity handling, escalation and admin intelligence.  
+`React` `TypeScript` `Supabase` `Leaflet`
 
----
-
-## 02 / SELECTED WORK
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### BLINKY
-
-**UI/UX · Product Design · Motion**
-
-Desktop-first AI companion experience.
-
-I worked on the interface, product experience, visual direction, landing page, interactions and motion language.
-
-</td>
-<td width="50%" valign="top">
-
-### CIVIFIX
-
-**Product · Engineering**
-
-Civic issue reporting for potholes, broken streetlights and waterlogging, with maps, severity handling, escalation and admin intelligence.
-
-`React` `TypeScript` `Supabase`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### DROP
-
-**Product · Architecture · UI**
-
-A deliberately simple media-downloading workflow.
-
+**DROP**  
+Product · Architecture · UI  
+A deliberately simple media-downloading workflow.  
 `Next.js` `Supabase` `Go` `FFmpeg`
 
-</td>
-<td width="50%" valign="top">
-
-### DAILYS
-
-**Product · Development · UI Systems**
-
+**DAILYS**  
+Product · Development · UI Systems  
 A personal workspace experiment around tasks, notes, knowledge, focus, analytics and customizable layouts.
 
-`React` `TypeScript` `Supabase`
+**CATCHUP AI**  
+AI · Automation  
+Telegram assistant exploring voice-note summaries, chat catch-up and searchable group context.
 
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### CATCHUP AI
-
-**AI · Automation**
-
-A Telegram-focused assistant exploring voice-note summaries, chat catch-up and searchable group context.
-
-</td>
-<td width="50%" valign="top">
-
-### LYRIX
-
-**Desktop · UI · Creative Tech**
-
-A lightweight music experiment around floating synced lyrics.
-
+**LYRIX**  
+Desktop · UI · Creative Tech  
+A lightweight music experiment around floating synced lyrics.  
 `Tauri` `Svelte`
 
-</td>
-</tr>
-</table>
+---
+
+### Capabilities
+
+| | |
+|---|---|
+| **Software** | React · TypeScript · Next.js · Python · Node.js |
+| **Product** | UI/UX · Design systems · Prototyping · Product thinking |
+| **AI** | LLMs · RAG · Agents · Voice interfaces |
+| **Automation** | n8n · APIs · Webhooks · Workflow systems |
+| **Creative** | GSAP · Remotion · Motion · Audio · Creative coding |
+| **Infrastructure** | Supabase · PostgreSQL · Docker · Linux · Vercel |
 
 ---
 
-## 03 / CAPABILITIES
+### Proof
 
-<div align="center">
-
-| AREA | TOOLS / PRACTICE |
-|:---|:---|
-| SOFTWARE | React · TypeScript · Next.js · Python · Node.js |
-| PRODUCT | UI/UX · Design systems · Prototyping · Product thinking |
-| AI | LLMs · RAG · Agents · Voice interfaces |
-| AUTOMATION | n8n · APIs · Webhooks · Workflow systems |
-| CREATIVE | GSAP · Remotion · Motion · Audio · Creative coding |
-| INFRA | Supabase · PostgreSQL · Docker · Linux · Vercel |
-
-</div>
+**IBM National-Level Hackathon — Winner**  
+**Google Lake City Hackathon — Winner · CiviFix**
 
 ---
 
-## 04 / PROOF OF WORK
+### GitHub
 
 <div align="center">
 
-**IBM NATIONAL-LEVEL HACKATHON — WINNER**
+<img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&theme=transparent&title_color=f5f5f3&icon_color=f5f5f3&text_color=888888" height="170" alt="GitHub statistics"/>
 
-&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
-
-**GOOGLE LAKE CITY HACKATHON — WINNER**
-
-<br/>
-<sub>CiviFix · product / engineering / presentation</sub>
-
-</div>
-
----
-
-## 05 / GITHUB
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=vedanthaha&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&theme=transparent&title_color=C7FF3D&icon_color=C7FF3D&text_color=777777" height="170" alt="GitHub statistics"/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&langs_count=8&hide_border=true&theme=transparent&title_color=C7FF3D&text_color=777777" height="170" alt="Top languages"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vedanthaha&layout=compact&langs_count=8&hide_border=true&theme=transparent&title_color=f5f5f3&text_color=888888" height="170" alt="Top languages"/>
 
 <br/><br/>
 
 <a href="https://github.com/vedanthaha">
-<img src="https://ghchart.rshah.org/C7FF3D/vedanthaha" width="96%" alt="GitHub contribution activity"/>
+<img src="https://ghchart.rshah.org/f5f5f3/vedanthaha" width="96%" alt="GitHub contribution activity"/>
 </a>
-
-</div>
-
----
-
-## 06 / CONTRIBUTION SYSTEM
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg?v=1ce748e" width="96%" alt="Contribution snake"/>
-
-<br/>
-
-<sub>generated from the GitHub contribution graph</sub>
-
-</div>
-
----
-
-## 07 / CURRENTLY
-
-```yaml
-building:
-  - AI products
-  - automation systems
-  - developer tools
-  - experimental interfaces
-
-learning:
-  - product architecture
-  - advanced UI systems
-  - motion + creative coding
-  - shipping faster
-
-outside_the_screen:
-  - basketball
-  - music production
-  - gaming
-  - typography
-```
-
----
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/footer.svg?v=92ce361" width="100%" alt="Let's build something"/>
 
 <br/><br/>
 
-<a href="https://github.com/vedanthaha">GitHub</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://github.com/vedanthaha?tab=repositories">Repositories</a>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg?v=1ce748e" width="96%" alt="Contribution snake"/>
+
+</div>
+
+---
+
+<div align="center">
+
+<sub>idea → experience → system → polish → ship</sub>
+
+<br/><br/>
+
+<a href="https://github.com/vedanthaha">github.com/vedanthaha</a>
 
 </div>
