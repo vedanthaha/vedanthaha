@@ -1,102 +1,177 @@
 from PIL import Image, ImageDraw, ImageFont
-import math, os
+import urllib.request, json, datetime, os, math, time
 
 REG="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 BOLD="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-def F(path,size): return ImageFont.truetype(path,size)
+def font(path,size): return ImageFont.truetype(path,size)
 
-os.makedirs("assets", exist_ok=True)
+def get_json(url):
+    req=urllib.request.Request(url,headers={"User-Agent":"vedanthaha-profile-visuals"})
+    with urllib.request.urlopen(req,timeout=20) as r:
+        return json.loads(r.read().decode())
 
-# Editorial project/software chart inspired by the supplied reference.
-W,H,FRAMES=900,570,48
-bg=(242,241,236); ink=(27,27,25); muted=(135,133,126); grid=(224,222,215); black=(28,28,26)
-projects=["BLINKY","CIVIFIX","DROP","DAILYS","CATCHUP","LYRIX"]
-langs=[("TS",8),("JS",7),("PY",6),("SQL",5),("GO",4),("CSS",4),("Svelte",3),("React",3)]
-bars=[52,78,64,91,70,84,60,73,88,67,80,58,72,94,76,86,63,77]
+REPO="vedanthaha/vedanthaha"
+
+# ---------- REAL GITHUB DATA ----------
+weeks=[]
+try:
+    data=get_json(f"https://api.github.com/repos/{REPO}/stats/commit_activity")
+    if isinstance(data,list) and data:
+        weeks=data[-12:]
+except Exception:
+    weeks=[]
+
+if not weeks:
+    # Only a rendering fallback; normally Actions receives live GitHub data.
+    now=int(time.time())
+    weeks=[{"week":now-(11-i)*604800,"total":0} for i in range(12)]
+
+try:
+    langs=get_json(f"https://api.github.com/repos/{REPO}/languages")
+except Exception:
+    langs={}
+total_lang=sum(langs.values()) or 1
+lang_rows=sorted(langs.items(),key=lambda x:x[1],reverse=True)[:6]
+lang_rows=[(k,v/total_lang*100) for k,v in lang_rows]
+
+# ---------- CLEAR EDITORIAL DATA GIF ----------
+W,H,FRAMES=1000,650,48
+bg=(241,240,235); ink=(28,28,26); muted=(133,131,124); grid=(218,216,209)
 frames=[]
+commits=[int(w.get("total",0)) for w in weeks]
+labels=[]
+for w in weeks:
+    dt=datetime.datetime.fromtimestamp(w["week"],datetime.timezone.utc)
+    labels.append(dt.strftime("%b").upper())
 
 for fi in range(FRAMES):
-    t=fi/(FRAMES-1); im=Image.new("RGB",(W,H),bg); d=ImageDraw.Draw(im)
-    d.rounded_rectangle((6,6,W-6,H-6),22,outline=(216,214,207),width=1)
-    d.text((34,25),"PROJECTS / SOFTWARE",font=F(BOLD,16),fill=ink)
-    d.text((34,46),"a visual index of what I build and what I build with",font=F(REG,10),fill=muted)
+    im=Image.new("RGB",(W,H),bg); d=ImageDraw.Draw(im)
+    d.rounded_rectangle((5,5,W-5,H-5),20,outline=(213,211,204),width=1)
 
-    d.rounded_rectangle((34,72,432,260),14,outline=grid,width=1)
-    d.text((52,90),"Six things I keep building",font=F(BOLD,13),fill=ink)
-    d.text((52,110),"projects · product · experiments",font=F(REG,9),fill=muted)
-    cx,cy,rx,ry=232,222,150,72
-    start,end=math.radians(205),math.radians(340)
-    pts=[(cx+rx*math.cos(start+(end-start)*k/60),cy+ry*math.sin(start+(end-start)*k/60)) for k in range(61)]
-    d.line(pts,fill=grid,width=2)
-    reveal=min(1,t*1.3)
-    for i,name in enumerate(projects):
-        a=start+(end-start)*i/5; px=cx+rx*math.cos(a); py=cy+ry*math.sin(a)
-        active=i<reveal*len(projects); r=4+int(1.5*math.sin(fi*.3+i)) if active else 2
-        d.ellipse((px-r,py-r,px+r,py+r),fill=ink if active else grid)
-        if active: d.text((px-12,py+9),f"{i+1:02d}",font=F(REG,8),fill=muted)
-    d.text((52,235),"01   02   03   04   05   06",font=F(REG,8),fill=muted)
+    # CHART 1: actual weekly commit activity
+    d.text((36,30),"NINETY DAYS AS A BARCODE",font=font(BOLD,17),fill=ink)
+    d.text((36,53),"real GitHub commit activity · updated by Actions",font=font(REG,10),fill=muted)
+    x0,y0=55,105; cw=890; ch=205
+    d.line((x0,y0+ch,x0+cw,y0+ch),fill=grid,width=2)
+    maxv=max(commits+[1])
+    barw=48
+    for i,v in enumerate(commits):
+        x=x0+i*72+8
+        phase=(fi/FRAMES)*math.pi*2
+        # Animate reveal + a subtle pulse, while preserving the real value.
+        reveal=min(1,max(0,(fi-i*2)/12))
+        h=(v/maxv)*ch*reveal
+        # light vertical range
+        d.line((x,y0+ch,x,y0+ch-h),fill=(197,195,188),width=2)
+        d.ellipse((x-5,y0+ch-h-5,x+5,y0+ch-h+5),fill=ink)
+        if v:
+            d.text((x-7,y0+ch-h-23),str(v),font=font(BOLD,10),fill=ink)
+        d.text((x-12,y0+ch+14),labels[i],font=font(REG,9),fill=muted)
+    d.text((36,325),f"TOTAL COMMITS  {sum(commits)}",font=font(BOLD,11),fill=ink)
+    d.text((210,325),"weekly values are pulled from GitHub, not hand-authored",font=font(REG,9),fill=muted)
 
-    d.rounded_rectangle((452,72,866,260),14,fill=black)
-    d.text((470,90),"What the stack looks like",font=F(BOLD,13),fill=(245,244,239))
-    d.text((470,110),"languages · frameworks · tools",font=F(REG,9),fill=(150,149,143))
-    for i,(lab,val) in enumerate(langs):
-        yy=224-i*16; active=int(val*(.45+.55*(.5+.5*math.sin(fi*.13+i*.6))))
-        for j in range(val):
-            xx=488+j*20+i*1.5; r=2.5 if j<active else 1.7
-            d.ellipse((xx-r,yy-r,xx+r,yy+r),fill=(244,243,238) if j<active else (70,69,65))
-        d.text((790,yy-5),lab,font=F(REG,8),fill=(155,153,147))
-
-    d.text((52,287),"NINETY DAYS AS A BARCODE",font=F(BOLD,13),fill=ink)
-    d.text((52,305),"shipping rhythm · commits · experiments · releases",font=F(REG,9),fill=muted)
-    base=360
-    for i,v in enumerate(bars):
-        x=58+i*42; h=int(v*(.55+.45*math.sin(fi*.12+i*.25)))
-        d.line((x,base-h,x,base+8),fill=grid,width=2); d.ellipse((x-3,base-h-3,x+3,base-h+3),fill=ink)
-    d.text((52,375),"JAN",font=F(REG,8),fill=muted); d.text((420,375),"JUN",font=F(REG,8),fill=muted); d.text((820,375),"NOW",font=F(REG,8),fill=muted)
-
-    d.text((52,405),"PROJECT SURFACE AREA",font=F(BOLD,12),fill=ink)
-    d.text((52,422),"where the work spends its time",font=F(REG,8),fill=muted)
-    labels=["UI","APP","DATA","AI","AUTO","MOTION"]; vals=[74,88,58,64,48,72]
-    for i,(lab,val) in enumerate(zip(labels,vals)):
-        x=70+i*57; bh=val*.8*(.9+.1*math.sin(fi*.2+i))
-        d.rounded_rectangle((x,515-bh,x+31,515),7,fill=ink if i==1 else (150,149,144)); d.text((x+2,523),lab,font=F(REG,8),fill=muted)
-
-    d.text((430,405),"SOFTWARE DNA",font=F(BOLD,12),fill=ink)
-    d.text((430,422),"a compact view of the tools behind the work",font=F(REG,8),fill=muted)
-    for row,(lab,count) in enumerate([("frontend",5),("backend",4),("data",3),("creative",2),("infra",1)]):
-        y=458+row*18; d.text((430,y-5),lab,font=F(REG,8),fill=muted)
-        for j in range(10):
-            xx=512+j*18; on=j<count*2 and math.sin(fi*.18+j*.6+row)>.2; r=3.5 if on else 2
-            d.ellipse((xx-r,y-r,xx+r,y+r),fill=ink if on else grid)
+    # CHART 2: actual language share
+    px,py,pw,ph=36,365,928,235
+    d.rounded_rectangle((px,py,px+pw,py+ph),14,fill=(29,29,27))
+    d.text((58,389),"SOFTWARE DNA",font=font(BOLD,16),fill=(244,243,238))
+    d.text((58,412),"repository language distribution · actual GitHub bytes",font=font(REG,9),fill=(151,149,143))
+    left=58; base=550; maxh=108
+    for i,(name,pct) in enumerate(lang_rows):
+        x=left+i*140
+        target_h=maxh*pct/100
+        reveal=min(1,max(0,(fi-i*2)/14))
+        h=target_h*reveal
+        d.rounded_rectangle((x,base-h,x+78,base),12,fill=(228,227,221) if i==0 else (148,147,142))
+        d.text((x,565),name.upper()[:11],font=font(BOLD,9),fill=(210,209,203))
+        d.text((x,base-h-22),f"{pct:.0f}%",font=font(BOLD,10),fill=(244,243,238))
+    d.text((58,590),"source: github.com/vedanthaha/vedanthaha",font=font(REG,8),fill=(108,106,101))
     frames.append(im)
 
-frames[0].save("assets/project-software.gif",save_all=True,append_images=frames[1:],duration=80,loop=0,optimize=True,disposal=2)
+im0=frames[0]
+im0.save("assets/project-software.gif",save_all=True,append_images=frames[1:],duration=90,loop=0,optimize=True,disposal=2)
 
-# Small walking pixel companion.
-W,H,FRAMES=900,190,40; frames=[]
-for fi in range(FRAMES):
-    im=Image.new("RGB",(W,H),(13,13,13)); d=ImageDraw.Draw(im)
-    d.line((28,157,872,157),fill=(50,50,50),width=2)
-    x=90+int(fi/(FRAMES-1)*690); step=fi%8
-    skin=(232,196,158); shirt=(245,245,240); pants=(92,92,92); dark=(18,18,18)
-    d.text((30,25),"HELLO FROM THE BUILD SIDE",font=F(BOLD,12),fill=(115,115,110))
-    d.rectangle((x-18,153,x+20,157),fill=(35,35,35))
-    d.rectangle((x-16,82,x+16,103),fill=dark); d.rectangle((x-11,79,x+12,84),fill=dark)
-    d.rectangle((x-9,87,x+13,100),fill=skin); d.rectangle((x+6,90,x+9,93),fill=dark)
-    d.rectangle((x-14,105,x+14,136),fill=shirt)
-    if step in (1,2,3,4):
-        d.rectangle((x+15,107,x+22,124),fill=shirt); d.rectangle((x+20,98,x+27,113),fill=skin); d.rectangle((x+25,89,x+32,102),fill=skin)
+# ---------- PIXEL DAY: WALK → SIT → WORK → WAVE ----------
+S=6
+LW,LH=150,58
+W,H=900,348
+frames=[]
+palette={"bg":(14,14,14),"floor":(47,47,45),"white":(235,235,228),"gray":(103,103,98),
+         "dark":(26,26,24),"skin":(219,181,143),"hair":(42,35,30),"shirt":(196,196,188),
+         "pants":(79,79,76),"accent":(145,145,138),"green":(83,105,77)}
+
+def pxrect(d,x,y,w,h,c): d.rectangle((x*S,y*S,(x+w)*S-1,(y+h)*S-1),fill=c)
+
+for fi in range(72):
+    im=Image.new("RGB",(LW*S,LH*S),palette["bg"]); d=ImageDraw.Draw(im)
+
+    # room
+    pxrect(d,0,48,150,1,palette["floor"])
+    # plant
+    pxrect(d,128,34,2,14,palette["gray"]); pxrect(d,125,29,7,4,palette["green"]); pxrect(d,129,26,6,4,palette["green"])
+    pxrect(d,126,46,7,3,palette["accent"])
+
+    # desk + laptop
+    pxrect(d,91,37,32,2,palette["white"]); pxrect(d,94,39,2,9,palette["gray"]); pxrect(d,119,39,2,9,palette["gray"])
+    pxrect(d,102,30,12,7,palette["gray"]); pxrect(d,103,31,10,5,palette["dark"])
+    pxrect(d,100,37,17,2,palette["white"])
+
+    phase=fi/71
+    # phases: walk 0-.28, sit .28-.55, work .55-.82, wave .82-1
+    if phase < .28:
+        q=phase/.28
+        x=12+int(72*q)
+        y=36-int(3*math.sin(q*math.pi))
+        pose="walk"
+    elif phase < .55:
+        q=(phase-.28)/.27
+        x=84+int(7*q); y=36+int(6*q)
+        pose="sit"
+    elif phase < .82:
+        q=(phase-.55)/.27
+        x=91; y=41
+        pose="work"
     else:
-        d.rectangle((x+15,109,x+22,133),fill=shirt); d.rectangle((x+17,130,x+24,140),fill=skin)
-    d.rectangle((x-22,109,x-15,132),fill=shirt); d.rectangle((x-24,130,x-17,140),fill=skin)
-    if step%2==0:
-        d.rectangle((x-10,134,x-1,157),fill=pants); d.rectangle((x+4,134,x+13,149),fill=pants); d.rectangle((x+9,147,x+22,157),fill=pants)
+        q=(phase-.82)/.18
+        x=91-int(34*q); y=35-int(3*math.sin(q*math.pi))
+        pose="wave"
+
+    # character, all pixel primitives
+    # head
+    pxrect(d,x+3,y-14,7,7,palette["skin"]); pxrect(d,x+3,y-15,7,2,palette["hair"])
+    pxrect(d,x+2,y-14,2,4,palette["hair"]); pxrect(d,x+9,y-13,1,2,palette["hair"])
+    # torso
+    pxrect(d,x+1,y-7,11,12,palette["shirt"])
+    # legs
+    if pose=="sit" or pose=="work":
+        pxrect(d,x+2,y+5,5,7,palette["pants"]); pxrect(d,x+8,y+5,5,4,palette["pants"])
+        pxrect(d,x+8,y+8,8,3,palette["pants"])
     else:
-        d.rectangle((x-10,134,x-1,149),fill=pants); d.rectangle((x-20,147,x-7,157),fill=pants); d.rectangle((x+3,134,x+13,157),fill=pants)
-    bx=x+45; by=58
-    d.rounded_rectangle((bx,by,bx+132,by+38),9,outline=(110,110,105),width=2,fill=(20,20,20))
-    d.polygon([(bx+10,by+38),(bx+22,by+38),(bx+15,by+48)],fill=(20,20,20))
-    d.text((bx+16,by+9),"hello :)",font=F(BOLD,15),fill=(242,242,236))
+        step=(-1 if fi%8<4 else 1)
+        pxrect(d,x+2,y+5,4,9,palette["pants"])
+        pxrect(d,x+8,y+5,4,8,palette["pants"])
+        pxrect(d,x+1+step,y+13,6,2,palette["white"]); pxrect(d,x+7-step,y+13,6,2,palette["white"])
+    # arms
+    if pose=="work":
+        pxrect(d,x+10,y-5,8,3,palette["shirt"]); pxrect(d,x+16,y-3,4,2,palette["skin"])
+        pxrect(d,x+1,y-5,6,3,palette["shirt"]); pxrect(d,x-2,y-3,4,2,palette["skin"])
+    elif pose=="wave":
+        wave=int(2*math.sin(q*math.pi*4))
+        pxrect(d,x+10,y-5,3,3,palette["shirt"]); pxrect(d,x+12,y-9-wave,3,5,palette["skin"])
+        pxrect(d,x+13,y-12-wave,2,3,palette["skin"])
+        pxrect(d,x+1,y-5,5,3,palette["shirt"]); pxrect(d,x-3,y-3,4,2,palette["skin"])
+    else:
+        pxrect(d,x-2,y-5,5,3,palette["shirt"]); pxrect(d,x-4,y-3,4,2,palette["skin"])
+        pxrect(d,x+10,y-5,5,3,palette["shirt"]); pxrect(d,x+14,y-3,4,2,palette["skin"])
+
+    # speech during wave + work label
+    if pose=="wave":
+        pxrect(d,99,10,42,12,palette["dark"]); pxrect(d,101,12,38,8,palette["white"])
+        d.text((612,74),"hello :)",font=font(BOLD,15),fill=palette["dark"])
+    elif pose=="work":
+        d.text((525,74),"shipping...",font=font(BOLD,13),fill=palette["white"])
+
+    # upscale is already pixelated because every primitive is SxS
     frames.append(im)
-frames[0].save("assets/pixel-hello.gif",save_all=True,append_images=frames[1:],duration=90,loop=0,optimize=True,disposal=2)
-print("generated project-software.gif + pixel-hello.gif")
+
+frames[0].save("assets/pixel-hello.gif",save_all=True,append_images=frames[1:],duration=100,loop=0,optimize=True,disposal=2)
+print("updated real-data chart + pixel day animation")
