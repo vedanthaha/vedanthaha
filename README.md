@@ -34,7 +34,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/system.svg?v=1" width="100%" alt="Vedant capability system"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/project-software.gif?v=2" width="100%" alt="Animated projects and software visualization"/>
 
 </div>
 
@@ -280,6 +280,14 @@ typography
 </td>
 </tr>
 </table>
+
+<br/>
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/pixel-hello.gif?v=2" width="100%" alt="Walking pixel character saying hello"/>
+
+</div>
 
 ---
 
