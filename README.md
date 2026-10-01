@@ -1,7 +1,7 @@
 <!-- PROFILE README · vedanthaha -->
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/hero.svg?v=4" width="100%" alt="Vedant Sharma"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/hero.svg?v=5" width="100%" alt="Vedant Sharma"/>
 </div>
 
 <br/>
