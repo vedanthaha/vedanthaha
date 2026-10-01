@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560"><rect width="1200" height="560" fill="#080808"/><g stroke="#242424" stroke-width="1"><path d="M60 0V560M220 0V560M380 0V560M540 0V560M700 0V560M860 0V560M1020 0V560M1140 0V560"/><path d="M0 92H1200M0 184H1200M0 276H1200M0 368H1200M0 460H1200"/></g><rect x="60" y="44" width="112" height="4" fill="#C7FF3D"/><text x="60" y="82" fill="#8D8D8D" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="3">DEVELOPER / DESIGNER / BUILDER</text><text x="60" y="218" fill="#F2F2ED" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="700" letter-spacing="-7">VEDANT</text><text x="60" y="326" fill="#F2F2ED" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="700" letter-spacing="-7">SHARMA</text><text x="64" y="374" fill="#C7FF3D" font-family="SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="1">software × product × creative technology</text><text x="60" y="500" fill="#777777" font-family="SFMono-Regular, Menlo, monospace" font-size="13">INDIA</text><text x="540" y="500" fill="#777777" font-family="SFMono-Regular, Menlo, monospace" font-size="13">2026 / PROFILE</text><text x="1140" y="500" text-anchor="end" fill="#C7FF3D" font-family="SFMono-Regular, Menlo, monospace" font-size="13">01 — 04</text><circle cx="1094" cy="82" r="8" fill="#C7FF3D"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+<defs>
+<filter id="organic" x="-30%" y="-30%" width="160%" height="160%">
+<feTurbulence type="fractalNoise" baseFrequency="0.008 0.014" numOctaves="2" seed="7" result="noise"><animate attributeName="baseFrequency" values="0.008 0.014;0.012 0.009;0.008 0.014" dur="2.8s" repeatCount="indefinite"/></feTurbulence>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" values="8;22;8" dur="2.8s" repeatCount="indefinite"/></feDisplacementMap>
+</filter>
+<style>.sans{font-family:Inter,Helvetica,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}</style>
+</defs>
+<rect width="1200" height="700" fill="#101010"/>
+<g opacity="0.13" stroke="#fff" stroke-width="1"><path d="M0 350H1200"/><path d="M600 0V700"/></g>
+<g filter="url(#organic)" transform="translate(600 305)">
+<text class="sans" x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#f5f5f3" font-size="300" font-weight="800" letter-spacing="-38">vs</text>
+<animateTransform attributeName="transform" type="scale" values="1 1;1.025 .975;1 1" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+</g>
+<g class="mono" fill="#888" font-size="13" letter-spacing="3">
+<text x="60" y="70">VEDANT SHARMA</text>
+<text x="1140" y="70" text-anchor="end">DEVELOPER / DESIGNER</text>
+<text x="60" y="650">SOFTWARE × PRODUCT × CREATIVE TECHNOLOGY</text>
+<text x="1140" y="650" text-anchor="end">INDIA</text>
+</g>
+<g fill="#f5f5f3"><circle cx="600" cy="70" r="3"/><circle cx="600" cy="630" r="3"/></g>
+</svg>
