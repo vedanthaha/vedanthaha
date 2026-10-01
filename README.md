@@ -34,7 +34,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/project-software.gif?v=2" width="100%" alt="Animated projects and software visualization"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/project-software.gif?v=4" width="100%" alt="Animated projects and software visualization"/>
 
 </div>
 
