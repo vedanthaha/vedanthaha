@@ -239,8 +239,8 @@ def draw_scene(frame):
     doodle_circle(d,219,55,9,MUTED,frame*.2)
     star(d,204+int(2*math.sin(frame*.2)),45,4,YELLOW,frame)
     star(d,17,44,3,GREEN,frame+5)
-    arrow(d,84,46,111,37,BLUE)
-    arrow(d,73,59,95,54,GREEN)
+    arrow(d,[(84,46),(111,37)],BLUE)
+    arrow(d,[(73,59),(95,54)],GREEN)
 
     # floating idea bubble / callout
     bx=86+int(3*math.sin(frame*.15))
@@ -310,7 +310,7 @@ def draw_scene(frame):
         txt(d,(117,78),"hey.",B(7),PAPER)
         sticker(d,78,94,39,14,"HELLO",YELLOW,0,frame*.3)
         sticker(d,137,95,39,14,"AGAIN",BLUE,0,frame*.3+2)
-        arrow(d,103,61,95,55,RED)
+        arrow(d,[(103,61),(95,55)],RED)
 
     # Footer timeline ticks — animated progress bar
     progress=(frame%FRAMES)/(FRAMES-1)
