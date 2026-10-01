@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/pixel-hello.gif?v=3" width="100%" alt="Pixel Vedant walking to his desk, working and waving"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/pixel-hello.gif?v=4" width="100%" alt="Pixel Vedant walking to his desk, working and waving"/>
 
 </div>
 
@@ -60,24 +60,17 @@ Right now I’m exploring AI products, automation, developer tools, experimental
 
 <td width="38%" valign="top">
 
-\`\`\`txt
-ROLE
-developer
-designer
-builder
+**ROLE**  
+Developer · Designer · Builder
 
-FOCUS
-product
-systems
-AI
-automation
+**FOCUS**  
+Product · Systems · AI · Automation
 
-INTERESTS
-motion
-creative coding
-music
-typography
-\`\`\`
+**INTERESTS**  
+Motion · Creative coding · Music · Typography
+
+**CURRENT MODE**  
+Build → test → simplify → ship
 
 </td>
 </tr>
