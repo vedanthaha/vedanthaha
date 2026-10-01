@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/vedant.gif?v=1" width="100%" alt="Vedant — animated liquid wordmark"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/main/assets/pixel-hello.gif?v=3" width="100%" alt="Pixel Vedant walking to his desk, working and waving"/>
 
 </div>
 
@@ -46,15 +46,15 @@
 <tr>
 <td width="62%" valign="top">
 
-I’m **Vedant Sharma**, a developer and product-minded designer from India.
+I’m **Vedant Sharma** — I build software, design interfaces, and obsess over the details between the two.
 
-I like taking an idea through the whole loop:
+I like taking an idea all the way through:
 
-**concept → interface → system → interaction → polish → ship**
+**idea → interface → system → interaction → polish → ship**
 
-My work usually lives between engineering and design. I care about how something is built, but also about how it **feels** when someone actually uses it.
+I’m usually somewhere between a product engineer and a visual designer: writing the code, shaping the interaction, making the motion feel right, then trimming whatever doesn’t need to be there.
 
-Currently exploring AI products, automation systems, developer tools, experimental interfaces and motion.
+Right now I’m exploring AI products, automation, developer tools, experimental interfaces, motion and creative coding.
 
 </td>
 
