@@ -198,7 +198,7 @@ A visual-content / Pinterest tooling experiment around API workflows and extract
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg" width="96%" alt="Contribution snake"/>
+<img src="https://raw.githubusercontent.com/vedanthaha/vedanthaha/gh-pages/github-snake.svg?v=1ce748e" width="96%" alt="Contribution snake"/>
 
 </div>
 
