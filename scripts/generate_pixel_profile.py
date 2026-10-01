@@ -1,310 +1,313 @@
 from PIL import Image, ImageDraw, ImageFont
 import math, os
 
-# Hand-drawn stickman / doodle animation for Vedant's GitHub profile.
-# The character physically interacts with the objects: walks, sits, types,
-# grabs coffee, drags a chart, opens a browser and ships a project.
-# No external artwork; everything is drawn from simple primitives.
+# Full-page hand-drawn doodle animation.
+# The stickman is not trapped in one banner: it travels through the whole
+# profile, touching sections, moving objects, dragging data, typing, and waving.
+# Everything is rendered as smooth line art; there is no pixel-art scaling.
 
-W, H = 360, 200
-FRAMES = 96
-DURATION = 80
+W, H = 520, 1100
+FRAMES = 32
+DURATION = 100
 
-BG = (250, 248, 241)
-INK = (24, 25, 23)
-PAPER = (255, 254, 249)
-MUTED = (120, 120, 112)
-GREEN = (92, 145, 82)
-BLUE = (82, 119, 161)
-RED = (181, 82, 73)
-YELLOW = (205, 166, 69)
-PURPLE = (133, 105, 151)
-SKIN = (224, 181, 139)
+BG = (248, 246, 238)
+PAPER = (255, 254, 250)
+INK = (27, 28, 26)
+MUTED = (115, 114, 106)
+GREEN = (81, 139, 72)
+BLUE = (76, 111, 154)
+RED = (176, 78, 69)
+YELLOW = (200, 163, 67)
+PURPLE = (126, 99, 145)
+LINE = (224, 221, 211)
 
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 F = lambda n: ImageFont.truetype(FONT, n)
 B = lambda n: ImageFont.truetype(BOLD, n)
 
-def line(d, pts, c=INK, width=2):
-    d.line([(int(x), int(y)) for x, y in pts], fill=c, width=width, joint="curve")
 
-def rect(d, x, y, w, h, fill=None, outline=INK, width=2):
-    d.rounded_rectangle((int(x), int(y), int(x+w), int(y+h)), radius=3, fill=fill, outline=outline, width=width)
+def P(x, y):
+    return (float(x), float(y))
 
-def txt(d, xy, s, font, c=INK):
-    d.text((int(xy[0]), int(xy[1])), s, font=font, fill=c)
 
-def ease(x):
-    x = max(0.0, min(1.0, x))
-    return x*x*(3-2*x)
+def line(d, pts, c=INK, w=3):
+    d.line([(int(a), int(b)) for a, b in pts], fill=c, width=w, joint="curve")
 
-def lerp(a, b, t):
-    return a + (b-a)*ease(t)
 
-def squiggle(d, x, y, length, c=INK, amp=3, phase=0):
-    pts=[]
-    for i in range(max(3, int(length/4))):
-        xx=x+i*4
-        yy=y+math.sin(i*.9+phase)*amp
-        pts.append((xx,yy))
-    line(d, pts, c, 2)
+def txt(d, p, s, font, c=INK):
+    d.text((int(p[0]), int(p[1])), s, font=font, fill=c)
 
-def arrow(d, a, b, c=INK, width=2):
-    line(d,[a,b],c,width)
-    ang=math.atan2(b[1]-a[1],b[0]-a[0])
-    for off in (2.55,-2.55):
-        p=(b[0]+math.cos(ang+off)*8,b[1]+math.sin(ang+off)*8)
-        line(d,[b,p],c,width)
 
-def sticker(d, x, y, w, h, label, accent, phase=0):
-    wob=math.sin(phase)*2
-    x+=wob
-    rect(d,x+3,y+3,w,h,fill=INK,outline=INK,width=2)
-    rect(d,x,y,w,h,fill=PAPER,outline=INK,width=2)
-    squiggle(d,x+7,y+h-5,w-14,accent,1.2,phase)
-    txt(d,(x+7,y+5),label,B(9),INK)
+def box(d, x, y, w, h, fill=PAPER, outline=INK, wid=2, r=6):
+    d.rounded_rectangle(
+        (x, y, x + w, y + h),
+        radius=r,
+        fill=fill,
+        outline=outline,
+        width=wid,
+    )
 
-def star(d,x,y,r,c,phase=0):
-    r *= .75+.25*(math.sin(phase)+1)/2
-    for a in (0,math.pi/2,math.pi/4,-math.pi/4):
-        line(d,[(x-math.cos(a)*r,y-math.sin(a)*r),(x+math.cos(a)*r,y+math.sin(a)*r)],c,2)
 
-def stickman(d, x, ground, pose, frame, holding=None):
-    # Head
-    head_y=ground-48
-    d.ellipse((x-11,head_y-11,x+11,head_y+11),outline=INK,width=2,fill=PAPER)
-    # tiny expressive face
-    if pose=="happy":
-        d.arc((x-5,head_y-1,x+5,head_y+7),0,180,fill=INK,width=1)
+def ease(t):
+    t = max(0.0, min(1.0, t))
+    return t * t * (3 - 2 * t)
+
+
+def arrow(d, a, b, c=INK):
+    line(d, [a, b], c, 2)
+    ang = math.atan2(b[1] - a[1], b[0] - a[0])
+    for z in (2.55, -2.55):
+        line(
+            d,
+            [
+                b,
+                (
+                    b[0] + math.cos(ang + z) * 8,
+                    b[1] + math.sin(ang + z) * 8,
+                ),
+            ],
+            c,
+            2,
+        )
+
+
+def sticker(d, x, y, w, h, label, accent, phase):
+    x += math.sin(phase * 0.7) * 1.5
+    y += math.sin(phase) * 2
+    box(d, x + 3, y + 3, w, h, fill=INK, outline=INK, wid=2, r=8)
+    box(d, x, y, w, h, fill=PAPER, outline=INK, wid=2, r=8)
+    txt(d, P(x + 9, y + 7), label, B(10))
+    line(d, [P(x + 8, y + h - 7), P(x + w - 8, y + h - 7)], accent, 2)
+
+
+def stickman(d, x, y, pose, phase=0):
+    head = (x, y - 72)
+    neck = (x, y - 59)
+    hip = (x, y - 23)
+
+    d.ellipse(
+        (head[0] - 13, head[1] - 13, head[0] + 13, head[1] + 13),
+        fill=PAPER,
+        outline=INK,
+        width=3,
+    )
+    d.ellipse((x - 5, head[1] - 2, x - 2, head[1] + 1), fill=INK)
+    d.ellipse((x + 2, head[1] - 2, x + 5, head[1] + 1), fill=INK)
+    line(d, [P(*neck), P(*hip)], INK, 4)
+
+    if pose == "type":
+        tap = 2 if int(phase * 8) % 2 == 0 else 0
+        line(d, [P(x, y - 52), P(x + 18, y - 41), P(x + 42, y - 41 + tap)], INK, 4)
+        line(d, [P(x, y - 52), P(x + 12, y - 39), P(x + 35, y - 39 - tap)], INK, 4)
+        line(d, [P(*hip), P(x - 9, y - 4)], INK, 4)
+        line(d, [P(*hip), P(x + 10, y - 4)], INK, 4)
+
+    elif pose == "pull":
+        line(d, [P(x, y - 52), P(x + 18, y - 44), P(x + 48, y - 44)], INK, 4)
+        line(d, [P(x, y - 52), P(x + 17, y - 36), P(x + 48, y - 36)], INK, 4)
+        line(d, [P(*hip), P(x - 11, y - 4)], INK, 4)
+        line(d, [P(*hip), P(x + 10, y - 4)], INK, 4)
+
+    elif pose == "wave":
+        lift = math.sin(phase * 5) * 3
+        line(d, [P(x, y - 52), P(x - 16, y - 40), P(x - 24, y - 27)], INK, 4)
+        line(d, [P(x, y - 52), P(x + 13, y - 40), P(x + 16, y - 70 + lift)], INK, 4)
+        line(d, [P(*hip), P(x - 9, y - 4)], INK, 4)
+        line(d, [P(*hip), P(x + 9, y - 4)], INK, 4)
+
+    elif pose == "sit":
+        line(d, [P(*hip), P(x + 16, y - 22), P(x + 28, y - 4)], INK, 4)
+        line(d, [P(*hip), P(x + 28, y - 5), P(x + 47, y - 4)], INK, 4)
+        line(d, [P(x, y - 52), P(x + 17, y - 42), P(x + 38, y - 42)], INK, 4)
+        line(d, [P(x, y - 52), P(x + 12, y - 39), P(x + 33, y - 40)], INK, 4)
+
     else:
-        d.ellipse((x-5,head_y-2,x-3,head_y),fill=INK)
-        d.ellipse((x+3,head_y-2,x+5,head_y),fill=INK)
+        step = 6 if int(phase * 8) % 2 == 0 else -6
+        line(d, [P(x, y - 52), P(x - 17, y - 39), P(x - 22, y - 25)], INK, 4)
+        line(d, [P(x, y - 52), P(x + 17, y - 39), P(x + 22, y - 25)], INK, 4)
+        line(d, [P(*hip), P(x - 9 + step, y - 4)], INK, 4)
+        line(d, [P(*hip), P(x + 9 - step, y - 4)], INK, 4)
 
-    # torso
-    neck=(x,head_y+11)
-    hip=(x,ground-18)
-    line(d,[neck,hip],INK,3)
 
-    if pose=="sit":
-        # thighs extend forward, lower legs down
-        line(d,[hip,(x+18,ground-12),(x+27,ground-1)],INK,3)
-        line(d,[hip,(x+8,ground-8),(x+18,ground-1)],INK,3)
-        # arms toward desk
-        line(d,[x,ground-37,(x+16),ground-29,(x+29),ground-29],INK,3)
-        line(d,[x,ground-37,(x+10),ground-27,(x+24),ground-27],INK,3)
-    elif pose=="type":
-        tap=2 if (frame//3)%2==0 else 0
-        line(d,[x,ground-37,x+16,ground-28,x+31,ground-28+tap],INK,3)
-        line(d,[x,ground-37,x+10,ground-27,x+25,ground-27-tap],INK,3)
-        line(d,[hip,x-10,ground-2],INK,3)
-        line(d,[hip,x+5,ground-1],INK,3)
-    elif pose=="drink":
-        # one arm bends up to cup
-        line(d,[x,ground-37,x+14,ground-29,x+15,ground-43],INK,3)
-        line(d,[x,ground-37,x-15,ground-27,x-22,ground-20],INK,3)
-        line(d,[hip,x-9,ground-1],INK,3)
-        line(d,[hip,x+8,ground-1],INK,3)
-    elif pose=="pull":
-        line(d,[x,ground-37,x+18,ground-31,x+35,ground-31],INK,3)
-        line(d,[x,ground-37,x+17,ground-24,x+35,ground-24],INK,3)
-        line(d,[hip,x-12,ground-1],INK,3)
-        line(d,[hip,x+9,ground-1],INK,3)
-    elif pose=="point":
-        line(d,[x,ground-37,x+16,ground-29,x+37,ground-42],INK,3)
-        line(d,[x,ground-37,x+15,ground-27,x+29,ground-28],INK,3)
-        line(d,[hip,x-10,ground-1],INK,3)
-        line(d,[hip,x+9,ground-1],INK,3)
-    elif pose=="wave":
-        lift=math.sin(frame*.6)*2
-        line(d,[x,ground-37,x-15,ground-27,x-20,ground-17],INK,3)
-        line(d,[x,ground-37,x+12,ground-25,x+14,ground-45+lift],INK,3)
-        line(d,[hip,x-10,ground-1],INK,3)
-        line(d,[hip,x+9,ground-1],INK,3)
-    else:
-        step=5 if (frame//4)%2 else -5
-        line(d,[x,ground-37,x-13,ground-26,x-17,ground-17],INK,3)
-        line(d,[x,ground-37,x+13,ground-26,x+18,ground-17],INK,3)
-        line(d,[hip,x-8+step,ground-1],INK,3)
-        line(d,[hip,x+8-step,ground-1],INK,3)
+def laptop(d, x, y, frame):
+    box(d, x, y, 100, 58, fill=PAPER, wid=3)
+    box(d, x + 8, y + 7, 84, 39, fill=(242, 244, 237), wid=2, r=3)
+    txt(d, P(x + 12, y + 11), "~/vedant", B(9), MUTED)
 
-    if holding:
-        d.ellipse((holding[0]-4,holding[1]-4,holding[0]+4,holding[1]+4),fill=YELLOW,outline=INK,width=2)
+    for i, w in enumerate((28, 40, 24, 52)):
+        line(
+            d,
+            [
+                P(x + 12, y + 26 + i * 6),
+                P(
+                    x + 12 + w + (2 if i == 2 and frame % 4 < 2 else 0),
+                    y + 26 + i * 6,
+                ),
+            ],
+            GREEN if i == 2 else INK,
+            3,
+        )
 
-def laptop(d,x,y,frame,open=True):
-    # large hand-drawn laptop
-    rect(d,x,y,82,48,fill=PAPER,outline=INK,width=3)
-    rect(d,x+6,y+6,70,34,fill=(245,246,238),outline=INK,width=2)
-    txt(d,(x+10,y+9),"~/vedant",B(8),MUTED)
-    code_y=y+21
-    for i in range(4):
-        w=18+((frame+i*2)%9)
-        rect(d,x+10,code_y+i*5,w,2,fill=(GREEN if i==2 else INK),outline=None,width=0)
-    # cursor visibly moves as the character types
-    cx=x+11+(frame*3)%62
-    cy=y+20+((frame//6)%4)*5
-    rect(d,cx,cy,3,4,fill=RED,outline=None,width=0)
-    # base
-    line(d,[(x-7,y+51),(x+89,y+51)],INK,4)
-    line(d,[(x+24,y+51),(x+64,y+51)],MUTED,2)
+    cx = x + 15 + (frame * 5) % 68
+    cy = y + 24 + ((frame // 5) % 4) * 6
+    line(d, [P(cx, cy), P(cx, cy + 5)], RED, 2)
+    line(d, [P(x - 8, y + 62), P(x + 108, y + 62)], INK, 5)
 
-def coffee(d,x,y,frame):
-    rect(d,x,y,15,11,fill=YELLOW,outline=INK,width=2)
-    line(d,[(x+15,y+3),(x+21,y+3),(x+21,y+9),(x+15,y+9)],INK,2)
-    for i in range(2):
-        xx=x+4+i*6
-        yy=y-3-int((frame+i*8)%18)
-        line(d,[(xx,yy+5),(xx-2,yy+2),(xx+1,yy)],MUTED,1)
 
-def browser(d,x,y,frame):
-    slide=math.sin(frame*.13)*4
-    x+=slide
-    rect(d,x,y,92,53,fill=PAPER,outline=INK,width=3)
-    line(d,[(x,y+13),(x+92,y+13)],INK,2)
-    for i,c in enumerate((RED,YELLOW,GREEN)):
-        d.ellipse((x+7+i*8,y+4,x+12+i*8,y+9),fill=c,outline=INK,width=1)
-    txt(d,(x+8,y+19),"buildbybits.dev",B(8),INK)
-    for i in range(3):
-        ww=42+int(8*math.sin(frame*.2+i))
-        line(d,[(x+9,y+33+i*6),(x+9+ww,y+33+i*6)],GREEN if i==1 else MUTED,2)
-
-def graph(d,x,y,frame,drag=0):
-    rect(d,x,y,72,48,fill=PAPER,outline=INK,width=2)
-    txt(d,(x+7,y+6),"ACTIVITY",B(7),INK)
-    pts=[]
+def mini_graph(d, x, y, frame, drag=0):
+    box(d, x, y, 102, 66, wid=2)
+    txt(d, P(x + 8, y + 8), "ACTIVITY", B(9))
+    pts = []
     for i in range(8):
-        xx=x+8+i*7
-        yy=y+36-10*math.sin(i*.75+frame*.06)-3*math.sin(i)
-        pts.append((xx+drag,yy))
-    line(d,pts,BLUE,3)
-    for px,py in pts[::2]:
-        d.ellipse((px-2,py-2,px+2,py+2),fill=RED,outline=INK,width=1)
+        pts.append(
+            P(
+                x + 10 + i * 12 + drag,
+                y + 48 - 12 * math.sin(i * 0.8 + frame * 0.05) - 3 * math.sin(i),
+            )
+        )
+    line(d, pts, BLUE, 3)
+    for px, py in pts[::2]:
+        d.ellipse((px - 2, py - 2, px + 2, py + 2), fill=RED, outline=INK, width=1)
 
-def desk(d,frame):
-    # desk and plant are alive too
-    y=144+int(math.sin(frame*.13))
-    line(d,[(142,y),(343,y)],INK,4)
-    line(d,[(154,y),(154,190)],MUTED,3)
-    line(d,[(327,y),(327,190)],MUTED,3)
-    # plant
-    sway=math.sin(frame*.16)*4
-    line(d,[(310,y),(310+sway,122)],GREEN,3)
-    line(d,[(310+sway,128),(299+sway,119)],GREEN,3)
-    line(d,[(310+sway,126),(320+sway,115)],GREEN,3)
-    d.ellipse((292+sway,112,306+sway,121),fill=GREEN,outline=INK,width=2)
-    d.ellipse((316+sway,108,329+sway,118),fill=GREEN,outline=INK,width=2)
 
-def scene(frame):
-    im=Image.new("RGB",(W,H),BG)
-    d=ImageDraw.Draw(im)
+def draw(frame):
+    im = Image.new("RGB", (W, H), BG)
+    d = ImageDraw.Draw(im)
 
-    # paper-like doodle background
-    for y in range(18,H,22):
-        squiggle(d,0,y,W,(232,230,220),1,frame*.02+y)
+    # Paper rules / sketchbook feel.
+    for yy in range(0, H, 40):
+        line(d, [P(0, yy), P(W, yy)], LINE, 1)
 
-    # Title and moving underline
-    txt(d,(14,9),"VEDANT",B(28),INK)
-    txt(d,(17,42),"developer · designer · builder",F(10),MUTED)
-    squiggle(d,17,57,118,GREEN,2,frame*.12)
+    # HERO
+    txt(d, P(26, 20), "VEDANT", B(42))
+    txt(d, P(28, 68), "developer · designer · builder", F(14), MUTED)
+    line(d, [P(28, 92), P(180, 92)], GREEN, 3)
+    sticker(d, 315, 24, 74, 30, "BUILD", GREEN, frame * 0.2)
+    sticker(d, 402, 58, 84, 30, "DESIGN", BLUE, frame * 0.2 + 1)
 
-    # Stickers physically bounce in.
-    sticker(d,155,10,66,28,"BUILD",GREEN,frame*.16)
-    sticker(d,230,23,73,28,"DESIGN",BLUE,frame*.16+2)
-    sticker(d,287,67,58,27,"SHIP",RED,frame*.16+4)
+    # ABOUT
+    txt(d, P(26, 132), "ABOUT", B(18), MUTED)
+    box(d, 25, 160, 470, 102, wid=2)
+    txt(d, P(42, 180), "I build software, interfaces, automations", F(15))
+    txt(d, P(42, 204), "and weird little experiments.", F(15))
 
-    # Loose doodles
-    star(d,145,26,9,YELLOW,frame*.3)
-    star(d,337,39,7,PURPLE,frame*.3)
-    arrow(d,(131,69),(165,61),BLUE,2)
-    squiggle(d,245,93,63,RED,2,frame*.15)
+    # PROJECTS
+    txt(d, P(26, 292), "PROJECTS", B(18), MUTED)
+    for label, accent, x in [
+        ("CIVIFIX", GREEN, 30),
+        ("BLINKY", BLUE, 188),
+        ("DAILYS", PURPLE, 346),
+    ]:
+        box(d, x, 324, 142, 84, wid=2)
+        txt(d, P(x + 14, 342), label, B(15))
+        line(d, [P(x + 14, 370), P(x + 112, 370)], accent, 3)
+        txt(d, P(x + 14, 386), "build / ship / iterate", F(9), MUTED)
 
-    desk(d,frame)
+    # STACK
+    txt(d, P(26, 444), "STACK", B(18), MUTED)
+    for i, label in enumerate(["REACT", "TS", "PYTHON", "SUPABASE", "N8N", "FIGMA"]):
+        x = 30 + (i % 3) * 156
+        yy = 480 + (i // 3) * 48
+        box(d, x, yy, 130, 34, wid=2)
+        txt(d, P(x + 12, yy + 9), label, B(10))
 
-    # Work objects
-    laptop(d,182,94,frame)
-    coffee(d,276,125,frame)
-    browser(d,18,103,frame)
+    # STATS
+    txt(d, P(26, 594), "BUILDING IN PUBLIC", B(18), MUTED)
+    box(d, 26, 628, 210, 100, wid=2)
+    txt(d, P(40, 644), "commits", B(11))
+    for i, value in enumerate([42, 55, 49, 71, 63, 82, 75, 90]):
+        line(d, [P(40 + i * 20, 710), P(40 + i * 20, 710 - 52 * value / 100)], GREEN, 8)
 
-    # A graph that the stickman will physically drag.
-    drag=0
-    graph_x=253
-    if 58 <= frame < 74:
-        q=ease((frame-58)/16)
-        drag=22*q
-    graph(d,graph_x+drag,94,frame)
+    graph_drag = ease((frame - 20) / 4) * 18 if 20 <= frame < 24 else 0
+    mini_graph(d, 260, 628, frame, graph_drag)
 
-    # Main story:
-    # 0-17: walk in
-    # 18-34: sit and type
-    # 35-48: get coffee and drink
-    # 49-74: drag graph / open browser
-    # 75-95: ship + wave
-    if frame < 18:
-        q=frame/17
-        x=55+int(105*ease(q))
-        stickman(d,x,143,"walk",frame)
-        txt(d,(35,75),"let's build something",B(10),INK)
-    elif frame < 35:
-        x=165
-        stickman(d,x,143,"type",frame)
-        # hands meet keyboard; little keystroke marks appear
-        for i in range(4):
-            if (frame+i*2)%7 < 3:
-                txt(d,(194+i*10,82-i*3),"·",B(10),(GREEN,BLUE,RED,YELLOW)[i])
-        txt(d,(183,72),"typing...",B(8),MUTED)
-    elif frame < 49:
-        q=ease((frame-35)/14)
-        x=int(165-34*q)
-        if q < .45:
-            stickman(d,x,143,"walk",frame)
-        else:
-            stickman(d,x,143,"drink",frame,holding=(276,125))
-        if q > .45:
-            coffee(d,276,125,frame)
-            txt(d,(225,73),"coffee break",B(8),MUTED)
-    elif frame < 58:
-        x=int(131+34*ease((frame-49)/9))
-        stickman(d,x,143,"walk",frame)
-        arrow(d,(156,115),(253,110),PURPLE,2)
-        txt(d,(177,73),"check the numbers",B(8),MUTED)
-    elif frame < 75:
-        q=ease((frame-58)/17)
-        x=int(165+22*q)
-        stickman(d,x,143,"pull",frame)
-        # Character's hands hold the chart edge while it moves.
-        arrow(d,(206,115),(253+int(22*q),110),BLUE,2)
-        txt(d,(205,73),"drag →",B(8),BLUE)
-    elif frame < 84:
-        x=187
-        stickman(d,x,143,"point",frame)
-        txt(d,(219,73),"ship it.",B(10),GREEN)
-        sticker(d,258,55,66,28,"SHIPPED",GREEN,frame*.25)
-        for i in range(5):
-            star(d,230+i*20,84-int(5*math.sin(frame+i)),4,(GREEN,BLUE,RED,YELLOW,PURPLE)[i],frame+i)
+    # CURRENTLY BUILDING
+    txt(d, P(26, 760), "CURRENTLY BUILDING", B(18), MUTED)
+    box(d, 26, 794, 470, 130, wid=2)
+    laptop(d, 62, 828, frame)
+    sticker(d, 306, 812, 136, 32, "AUTOMATION", YELLOW, frame * 0.18)
+    txt(d, P(310, 858), "n8n · AI · systems", B(10), MUTED)
+
+    # CONTACT
+    txt(d, P(26, 960), "LET'S BUILD", B(28))
+    txt(d, P(28, 1005), "github.com/vedanthaha", F(12), MUTED)
+    line(
+        d,
+        [P(28 + i * 4, 1040 + math.sin(i * 0.6 + frame * 0.15) * 3) for i in range(50)],
+        RED,
+        3,
+    )
+
+    for sep in (276, 436, 586, 752, 950):
+        line(d, [P(20, sep), P(500, sep)], INK, 2)
+
+    # The same little character travels through the whole page.
+    if frame < 5:
+        q = frame / 4
+        x = 5 + 130 * ease(q)
+        y = 112
+        pose = "walk"
+        txt(d, P(255, 100), "hey.", B(14), MUTED)
+
+    elif frame < 9:
+        q = (frame - 5) / 4
+        x = 135
+        y = 120 + 35 * ease(q)
+        pose = "walk"
+
+    elif frame < 16:
+        q = (frame - 9) / 7
+        x = 135 + 220 * ease(q)
+        y = 238
+        pose = "walk"
+        arrow(d, P(285, 300), P(310, 320), GREEN)
+
+    elif frame < 20:
+        q = (frame - 16) / 4
+        x = 355
+        y = 420 + 55 * ease(q)
+        pose = "walk"
+
+    elif frame < 24:
+        q = (frame - 20) / 4
+        x = 355 - 170 * ease(q)
+        y = 580 + 50 * ease(q)
+        pose = "pull"
+        txt(d, P(112, 740), "dragging data", B(9), BLUE)
+
+    elif frame < 28:
+        q = (frame - 24) / 4
+        x = 185 + 90 * ease(q)
+        y = 728
+        pose = "type"
+
     else:
-        q=(frame-84)/11
-        x=205
-        stickman(d,x,143,"wave",frame)
-        txt(d,(225,73),"see you next loop",B(9),INK)
-        sticker(d,90,69,72,28,"AGAIN",YELLOW,frame*.18)
-        arrow(d,(163,82),(196,91),RED,2)
+        q = (frame - 28) / 3
+        x = 275
+        y = 930 - 95 * ease(q)
+        pose = "wave"
+        sticker(d, 330, 880, 94, 30, "SHIPPED", GREEN, frame * 0.2)
 
-    # Animated little cursor follows the action.
-    cx=35+((frame*5)%285)
-    cy=62+10*math.sin(frame*.23)
-    line(d,[(cx,cy),(cx+8,cy+3)],INK,2)
-    line(d,[(cx+8,cy+3),(cx+4,cy+8)],INK,2)
+    stickman(d, x, y, pose, frame / FRAMES * math.pi * 2)
 
-    # Footer
-    txt(d,(16,181),"software · product · AI · automation · creative technology",F(8),MUTED)
-    line(d,[(16,194),(344,194)],INK,2)
-    progress=frame/(FRAMES-1)
-    line(d,[(16,194),(16+328*progress,194)],GREEN,4)
+    # A little object follows the character's hand during the project pass.
+    if 9 <= frame < 16:
+        px = x + 35
+        py = y - 46
+        d.ellipse((px - 5, py - 5, px + 5, py + 5), fill=YELLOW, outline=INK, width=2)
+
+    # Roaming cursor makes the whole page feel alive.
+    cx = 40 + (frame * 17) % 420
+    cy = 280 + 10 * math.sin(frame * 0.35)
+    line(d, [P(cx, cy), P(cx + 9, cy + 4), P(cx + 4, cy + 12)], INK, 2)
 
     return im
 
-frames=[scene(i) for i in range(FRAMES)]
-os.makedirs("assets",exist_ok=True)
+
+frames = [draw(i) for i in range(FRAMES)]
+os.makedirs("assets", exist_ok=True)
+
 frames[0].save(
     "assets/profile.gif",
     save_all=True,
@@ -314,4 +317,5 @@ frames[0].save(
     optimize=True,
     disposal=2,
 )
+
 print("wrote assets/profile.gif", os.path.getsize("assets/profile.gif"))
