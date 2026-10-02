@@ -15,14 +15,19 @@ jobs:
   snake:
     runs-on: ubuntu-latest
     steps:
-      - uses: Platane/snk@v3
+      - name: Generate contribution snake
+        uses: Platane/snk@v3
         with:
           github_user_name: vedanthaha
           outputs: |
-            assets/github-snake.svg?palette=github-dark&color_snake=%23B7D79A
-            assets/github-snake-dark.svg?palette=github-dark&color_snake=%23B7D79A
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=%23B7D79A
 
-      - uses: stefanzweifel/git-auto-commit-action@v7
+      - name: Publish snake assets
+        uses: crazy-max/ghaction-github-pages@v5
         with:
-          commit_message: "chore: refresh contribution snake"
-          file_pattern: "assets/github-snake*.svg"
+          target_branch: output
+          build_dir: dist
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
