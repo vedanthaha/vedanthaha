@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+<rect width="1200" height="300" fill="#F4F1E8"/>
+<g stroke="#D8D1C2" stroke-width="1"><path d="M0 62H1200M0 122H1200M0 182H1200M0 242H1200"/><path d="M300 0V300M600 0V300M900 0V300"/></g>
+<g fill="#30352F" font-family="monospace">
+<text x="36" y="42" font-size="13">PROJECT WALL / SELECTED BUILDS</text>
+<text x="42" y="103" font-size="16">01  DAILYS</text><text x="342" y="103" font-size="16">02  GIGGLL</text><text x="642" y="103" font-size="16">03  AFFEX</text><text x="942" y="103" font-size="16">04  TALENTTROVE</text>
+<text x="42" y="163" font-size="12">graph / research / workspace</text><text x="342" y="163" font-size="12">product / interaction</text><text x="642" y="163" font-size="12">brand / web</text><text x="942" y="163" font-size="12">recruitment / product</text>
+<text x="42" y="223" font-size="16">05  BLINKY</text><text x="342" y="223" font-size="12">AI / UI / voice / automation</text>
+</g>
+<g fill="none" stroke="#6F8F52" stroke-width="3">
+<path d="M70 270c20-28 34 12 53-16s31 10 50-16 33 7 52-17"/>
+<circle cx="100" cy="250" r="4"/><circle cx="151" cy="254" r="4"/><circle cx="203" cy="237" r="4"/>
+</g>
+<g fill="#30352F" font-family="cursive" font-size="17"><text x="640" y="273">the details are the product.</text></g>
+</svg>
