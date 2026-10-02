@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260">
+<rect width="1200" height="260" fill="#F4F1E8"/>
+<text x="48" y="48" font-family="monospace" font-size="13" fill="#30352F">MARGIN NOTES / HOW I THINK</text>
+<g fill="none" stroke="#30352F" stroke-width="2">
+<path d="M86 105h210"/><path d="M86 155h210"/><path d="M410 105h210"/><path d="M410 155h210"/><path d="M735 105h210"/><path d="M735 155h210"/>
+</g>
+<g fill="#30352F" font-family="Georgia,serif">
+<text x="86" y="96" font-size="20">observe</text><text x="86" y="145" font-size="13">notice what feels off</text>
+<text x="410" y="96" font-size="20">simplify</text><text x="410" y="145" font-size="13">remove what doesn't help</text>
+<text x="735" y="96" font-size="20">ship</text><text x="735" y="145" font-size="13">make the idea real</text>
+</g>
+<g fill="#6F8F52" font-family="cursive" font-size="18"><text x="87" y="205">↳ spacing</text><text x="410" y="205">↳ flow</text><text x="735" y="205">↳ feeling</text></g>
+</svg>
