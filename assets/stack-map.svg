@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="Technology constellation">
+  <rect width="1200" height="300" rx="18" fill="#0d0e0f"/>
+  <g stroke="#303337" stroke-width="1" fill="none">
+    <path d="M95 82H1105M95 150H1105M95 218H1105"/>
+    <path d="M95 82L255 150L420 82L590 150L760 82L930 150L1105 82"/>
+    <path d="M95 218L255 150L420 218L590 150L760 218L930 150L1105 218"/>
+  </g>
+  <g fill="#9fbd91">
+    <circle cx="255" cy="150" r="5"/><circle cx="590" cy="150" r="5"/><circle cx="930" cy="150" r="5"/>
+  </g>
+  <g fill="#e7e7df" font-family="Arial, Helvetica, sans-serif" font-size="14">
+    <text x="95" y="64">REACT</text><text x="238" y="132">TYPESCRIPT</text>
+    <text x="395" y="64">NEXT.JS</text><text x="565" y="132">PYTHON</text>
+    <text x="738" y="64">SUPABASE</text><text x="905" y="132">TAURI</text>
+    <text x="95" y="240">NODE</text><text x="238" y="240">POSTGRES</text>
+    <text x="395" y="240">TAILWIND</text><text x="565" y="240">N8N</text>
+    <text x="738" y="240">LINUX</text><text x="905" y="240">FIGMA</text>
+  </g>
+  <g fill="#777b78" font-family="monospace" font-size="10" letter-spacing="1.5">
+    <text x="95" y="22">STACK MAP / TOOLS I ACTUALLY USE</text>
+    <text x="930" y="22">NO BADGE WALL</text>
+  </g>
+</svg>
