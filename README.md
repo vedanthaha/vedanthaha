@@ -17,6 +17,10 @@
 <br>
 
 <p align="center">
+  <img src="assets/type-specimen.svg" width="100%" alt="Vedant Sharma type specimen"/>
+</p>
+
+<p align="center">
   <img src="assets/doodle.svg" width="100%" alt="Minimal hand-drawn build diagram"/>
 </p>
 
@@ -52,6 +56,10 @@ A few more things I've explored across web, bots, automation, creative tooling a
   <img src="assets/work-matrix.svg" width="100%" alt="Project craft matrix"/>
 </p>
 
+<p align="center">
+  <img src="assets/stack-map.svg" width="100%" alt="Technology constellation"/>
+</p>
+
 ## What I work with
 
 <sub>Swiss-grid restraint · editorial hierarchy · one quiet accent</sub>
@@ -71,6 +79,10 @@ Figma · UI/UX · motion · visual systems
 **SYSTEMS**  
 Linux · Git · Docker · Tauri
 
+<p align="center">
+  <img src="assets/blueprint.svg" width="100%" alt="Blueprint build process"/>
+</p>
+
 ## Currently building
 
 - AI-native software that feels like a product, not a demo
@@ -81,7 +93,8 @@ Linux · Git · Docker · Tauri
 ## Visuals
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&bg_color=0d0e0f&color=9fbd91&line=9fbd91&point=e7e7df&area=true&area_color=9fbd91&hide_border=true&custom_title=contribution%20rhythm" width="100%" alt="GitHub contribution activity graph"/>
+  <sub>CONTRIBUTION RHYTHM</sub><br>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&bg_color=0d0e0f&color=9fbd91&line=9fbd91&point=e7e7df&area=true&area_color=9fbd91&hide_border=true&custom_title=" width="100%" alt="GitHub contribution activity graph"/>
 </p>
 
 <p align="center">
