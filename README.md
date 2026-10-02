@@ -33,6 +33,19 @@
 | **07** | **[Gladiator Syndicate](https://github.com/vedanthaha/gladiator-syndicate)** | web / product experiment |
 | **08** | **Giggll** | creative product experiment |
 
+<details>
+<summary><strong>more experiments & repos</strong> · expand</summary>
+
+A few more things I've explored across web, bots, automation, creative tooling and systems work.
+
+- Telegram music / utility bots
+- creative web experiments
+- automation prototypes
+- Linux / desktop experiments
+- interaction and motion studies
+
+</details>
+
 <br>
 
 <p align="center">
@@ -40,6 +53,8 @@
 </p>
 
 ## What I work with
+
+<sub>Swiss-grid restraint · editorial hierarchy · one quiet accent</sub>
 
 **PRODUCT**  
 React · Next.js · TypeScript · Vite · Tailwind
@@ -64,10 +79,6 @@ Linux · Git · Docker · Tauri
 - interfaces where motion supports the product instead of distracting from it
 
 ## Visuals
-
-<p align="center">
-  <img src="assets/activity.svg" width="100%" alt="Minimal activity visualization"/>
-</p>
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=vedanthaha&bg_color=0d0e0f&color=9fbd91&line=9fbd91&point=e7e7df&area=true&area_color=9fbd91&hide_border=true&custom_title=contribution%20rhythm" width="100%" alt="GitHub contribution activity graph"/>
