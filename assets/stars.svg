@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" role="img">
   <title>Small hand-drawn stars and build notes</title>
-  <rect width="1200" height="150" rx="18" fill="#0d0e0f"/>
-  <g fill="none" stroke="#d9d9d2" stroke-width="1.5" stroke-linecap="round" opacity=".78">
+  <rect width="1200" height="150" rx="18" fill="#F4F1E8"/>
+  <g fill="none" stroke="#8A8F88" stroke-width="1.5" stroke-linecap="round" opacity=".78">
     <path d="M70 78c20-18 34 10 50-9 14-17 25 10 42-3"/>
     <path d="M1010 76c24 8 34-17 54-5 15 9 27-8 44 1"/>
     <path d="M520 111c35-9 60 8 92-4 25-9 48 3 75-6"/>
   </g>
-  <g fill="#e7e7df">
+  <g fill="#171918">
     <path d="M162 38l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
     <path d="M326 103l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
     <path d="M731 43l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/>
@@ -14,7 +14,7 @@
     <circle cx="236" cy="56" r="2.5"/><circle cx="806" cy="89" r="2.5"/>
     <circle cx="1080" cy="45" r="2.5"/><circle cx="430" cy="42" r="2"/>
   </g>
-  <g fill="#85877f" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="2">
+  <g fill="#5F655F" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" letter-spacing="2">
     <text x="64" y="128">BUILD · BREAK · LEARN · SHIP</text>
     <text x="1018" y="128" text-anchor="end">★  /  2026</text>
   </g>
