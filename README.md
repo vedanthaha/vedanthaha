@@ -12,6 +12,10 @@
 
 </div>
 
+<p align="center">
+  <img src="assets/notebook-cover.svg" width="100%" alt="Vedant notebook cover — product, design and systems"/>
+</p>
+
 <br>
 
 > <strong>I turn ideas into things people actually want to use.</strong>
@@ -84,6 +88,10 @@ Desktop AI companion work spanning UI/UX, screen awareness, voice interaction, a
 <code>Tauri</code> <code>React</code> <code>AI</code> <code>voice</code> <code>automation</code>
 
 <p align="center">
+  <img src="assets/project-spread.svg" width="100%" alt="Selected projects visual spread"/>
+</p>
+
+<p align="center">
   <img src="assets/work-matrix.svg" width="100%" alt="Project craft map"/>
 </p>
 
@@ -94,6 +102,10 @@ Desktop AI companion work spanning UI/UX, screen awareness, voice interaction, a
 <blockquote>
   <strong>think too much → notice the weird detail → make a version → break it → make it feel right → ship</strong>
 </blockquote>
+
+<p align="center">
+  <img src="assets/observation.svg" width="100%" alt="Margin notes about how Vedant thinks and builds"/>
+</p>
 
 <p align="center">
   <img src="assets/blueprint.svg" width="100%" alt="Build process blueprint"/>
